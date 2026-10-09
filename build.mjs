@@ -39,6 +39,10 @@ function loadCollection(dir) {
       let trimmed = meta.cover ? body.replace(new RegExp(`^\\s*!\\[[^\\]]*\\]\\(${meta.cover.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\)\\s*`), '') : body;
       // Same for the summary, which the header shows as the lede.
       if (meta.summary && trimmed.trimStart().startsWith(meta.summary)) trimmed = trimmed.trimStart().slice(meta.summary.length);
+      // The period already sits under the title.
+      trimmed = trimmed.replace(/^\s*\d{4}\.\d{2}\s*\\?~[^\n]*\n/, '');
+      // A "Summary" callout that only repeats the lede adds nothing either.
+      trimmed = trimmed.replace(/^##\s*Summary\s*\n+<div class="callout">[\s\S]*?<\/div>\s*/m, '');
       return { slug: f.replace(/\.md$/, ''), ...meta, html: marked.parse(trimmed) };
     })
     .sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
@@ -49,10 +53,7 @@ const companies = loadCollection('content/companies');
 const activities = loadCollection('content/activities');
 const companyBySlug = Object.fromEntries(companies.map((c) => [c.slug, c]));
 
-const themeToggle = `<button class="theme-toggle" type="button" aria-label="테마 전환" data-theme-toggle>
-  <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-  <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-</button>`;
+const themeToggle = `<button class="theme-toggle" type="button" data-theme-toggle><span class="to-dark">다크 모드</span><span class="to-light">라이트 모드</span></button>`;
 
 function layout({ title, description, body, path = '/' }) {
   return `<!doctype html>
@@ -67,7 +68,7 @@ function layout({ title, description, body, path = '/' }) {
 <meta property="og:type" content="website">
 <meta property="og:url" content="${SITE_URL}${path}">
 <meta property="og:image" content="${SITE_URL}${profile.photo}">
-<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/main/profile.png" type="image/png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -108,7 +109,7 @@ function renderIndex() {
     .join('');
 
   const skills = profile.skills
-    .map((g) => `<div class="skill-group"><h3>${esc(g.group)}</h3><ul class="chips">${g.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul></div>`)
+    .map((g) => `<div class="skill-group"><h3>${esc(g.group)}</h3><p>${g.items.map(esc).join(', ')}</p></div>`)
     .join('');
 
   const experience = profile.experience
@@ -124,7 +125,7 @@ function renderIndex() {
     <p class="summary">${inline(e.summary)}</p>
     <ul class="highlights">${e.highlights.map((h) => `<li>${inline(h)}</li>`).join('')}</ul>
     ${e.note ? `<p class="note">${esc(e.note)}</p>` : ''}
-    ${hasDetail ? `<a class="more" href="/companies/${e.slug}/">프로젝트 자세히 보기 <span aria-hidden="true">→</span></a>` : ''}
+    ${hasDetail ? `<a class="more" href="/companies/${e.slug}/">프로젝트 자세히 보기</a>` : ''}
   </div>
 </article>`;
     })
@@ -137,15 +138,15 @@ function renderIndex() {
     <h3>${esc(a.title)}</h3>
     ${a.period || a.role ? `<p class="card-meta">${[a.role, a.period].filter(Boolean).map(esc).join(' · ')}</p>` : ''}
     ${a.summary ? `<p class="card-summary">${inline(a.summary)}</p>` : ''}
-    ${a.tags?.length ? `<ul class="tags">${a.tags.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
+    ${a.tags?.length ? `<p class="stack">${a.tags.map(esc).join(', ')}</p>` : ''}
   </div>
 </a>`)
     .join('');
 
   const body = `<section class="hero wrap">
   <div class="hero-text">
-    <p class="eyebrow">${esc(profile.role)}</p>
     <h1>${esc(profile.name)}</h1>
+    <p class="hero-role">${esc(profile.role)}</p>
     <blockquote class="quote">
       <p>“${esc(profile.quote)}”</p>
       <cite>— ${esc(profile.quoteBy)}</cite>
@@ -199,7 +200,7 @@ function renderDetail(item, kind, list) {
   const meta = [item.role || exp?.role, item.period || exp?.period].filter(Boolean);
 
   const body = `<article class="detail wrap-narrow">
-  <a class="back" href="/${backHash}"><span aria-hidden="true">←</span> 이력서로 돌아가기</a>
+  <a class="back" href="/${backHash}">이력서로 돌아가기</a>
   <header class="detail-head">
     ${exp?.logo ? `<img class="logo" src="${esc(exp.logo)}" alt="" width="56" height="56">` : ''}
     <div>
@@ -208,7 +209,7 @@ function renderDetail(item, kind, list) {
     </div>
   </header>
   ${item.summary ? `<p class="lede">${inline(item.summary)}</p>` : ''}
-  ${item.tags?.length ? `<ul class="tags">${item.tags.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
+  ${item.tags?.length ? `<p class="stack">${item.tags.map(esc).join(', ')}</p>` : ''}
   <div class="prose">
 ${item.html}
   </div>

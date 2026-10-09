@@ -21,7 +21,7 @@ cover: "/assets/img/butbeautiful/01.jpg"
 ## Role & Responsibilities
 
 - Android 앱 기능 개발 전반 (모임 생성·일정 조율·RSVP, 사진·미디어, 실시간 채팅, 클럽)
-- iOS 앱 병행 개발 — 같은 기능을 두 플랫폼에 동시 출시
+- iOS 앱 병행 개발: 같은 기능을 두 플랫폼에 동시 출시
 - 앱 아키텍처 전환 주도 (ViewModel → Presenter, 데이터 레이어 단순화)
 - 빌드 최적화, CI/CD 구축과 릴리즈 운영
 - 코드 규약 자동화 (커스텀 detekt 룰, 아키텍처 문서)
@@ -30,7 +30,7 @@ cover: "/assets/img/butbeautiful/01.jpg"
 
 ---
 
-### 클럽(커뮤니티) 도메인 구축 — Android · iOS
+### 클럽(커뮤니티) 도메인 구축 (Android · iOS)
 
 #### Problem
 
@@ -48,8 +48,8 @@ cover: "/assets/img/butbeautiful/01.jpg"
 
 <div class="gallery">
 
-![클럽 만들기 — 이름 기반 커버 추천](/assets/img/butbeautiful/01.jpg)
-![클럽 홈 — 내 클럽 프로필·멤버·채팅](/assets/img/butbeautiful/02.jpg)
+![클럽 만들기, 이름 기반 커버 추천](/assets/img/butbeautiful/01.jpg)
+![클럽 홈, 내 클럽 프로필·멤버·채팅](/assets/img/butbeautiful/02.jpg)
 ![클럽 모임 참여 전 미리보기](/assets/img/butbeautiful/03.jpg)
 
 </div>
@@ -195,9 +195,9 @@ cover: "/assets/img/butbeautiful/01.jpg"
 
 - 모임 만들기·일정 조율·RSVP 플로우 리뉴얼 (v2.0)
 - 모임 상세 장소 섹션과 전체 지도 시트 (Android · iOS)
-- 초대 플로우 개편 — 친구 / 클럽 멤버 초대, 공유 채널 (Android · iOS)
+- 초대 플로우 개편: 친구·클럽 멤버 초대, 공유 채널 (Android · iOS)
 - 얼굴인식 동의 플로우 (Android · iOS)
-- 실시간 채팅 고도화 — 답장·수정·멘션·반응
+- 실시간 채팅 고도화: 답장·수정·멘션·반응
 - 오프라인에서도 열리는 홈 화면 캐시
 - 폴더블·태블릿 대화면 2-pane 레이아웃
 - Compose 피드 스크롤 jank 해결
