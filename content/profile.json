@@ -7,31 +7,95 @@
   "quoteBy": "Kareem Abdul-Jabbar",
   "intro": "혼자가 아닌 모든 사람들에게 좋은 영향을 끼칠 수 있는 개발자가 되기 위하여 노력하고 있습니다.",
   "contacts": [
-    { "label": "Email", "text": "luminate5991@gmail.com", "href": "mailto:luminate5991@gmail.com" },
-    { "label": "GitHub", "text": "github.com/junwooYeom", "href": "https://github.com/junwooYeom" },
-    { "label": "LinkedIn", "text": "linkedin.com/in/준우-염", "href": "https://www.linkedin.com/in/%EC%A4%80%EC%9A%B0-%EC%97%BC-07b640247/" },
-    { "label": "velog", "text": "velog.io/@wyt_cpri", "href": "https://velog.io/@wyt_cpri/posts" }
+    {
+      "label": "Email",
+      "text": "luminate5991@gmail.com",
+      "href": "mailto:luminate5991@gmail.com"
+    },
+    {
+      "label": "GitHub",
+      "text": "github.com/junwooYeom",
+      "href": "https://github.com/junwooYeom"
+    },
+    {
+      "label": "LinkedIn",
+      "text": "linkedin.com/in/준우-염",
+      "href": "https://www.linkedin.com/in/%EC%A4%80%EC%9A%B0-%EC%97%BC-07b640247/"
+    },
+    {
+      "label": "velog",
+      "text": "velog.io/@wyt_cpri",
+      "href": "https://velog.io/@wyt_cpri/posts"
+    }
   ],
   "skills": [
-    { "group": "Android", "items": ["Kotlin", "Jetpack Compose", "Coroutines/Flow", "Clean Architecture", "Multi-Module", "Hilt", "Navigation", "Room", "DataStore"] },
-    { "group": "Architecture & Productivity", "items": ["Modularization", "Build Optimization", "Gradle Custom Plugin", "Version Catalog", "CI/CD (GitHub Actions, CircleCI)", "Testing (Compose Test, Unit Test)"] },
-    { "group": "Mobile Tech", "items": ["BLE", "CameraX", "Media3", "TFLite", "JNI/C++", "Cipher"] },
-    { "group": "SDK Development", "items": ["API Architecture", "Message Queueing", "SDK Test Automation", "Maven Publishing"] }
+    {
+      "group": "Android",
+      "items": [
+        "Kotlin",
+        "Jetpack Compose",
+        "Coroutines/Flow",
+        "Clean Architecture",
+        "Multi-Module",
+        "Hilt",
+        "Navigation",
+        "Room",
+        "DataStore"
+      ]
+    },
+    {
+      "group": "Architecture & Productivity",
+      "items": [
+        "Modularization",
+        "Build Optimization",
+        "Gradle Custom Plugin",
+        "Version Catalog",
+        "CI/CD (GitHub Actions, CircleCI)",
+        "Testing (Compose Test, Unit Test)"
+      ]
+    },
+    {
+      "group": "Mobile Tech",
+      "items": [
+        "BLE",
+        "CameraX",
+        "Media3",
+        "TFLite",
+        "JNI/C++",
+        "Cipher"
+      ]
+    },
+    {
+      "group": "SDK Development",
+      "items": [
+        "API Architecture",
+        "Message Queueing",
+        "SDK Test Automation",
+        "Maven Publishing"
+      ]
+    }
   ],
   "experience": [
     {
-      "slug": "butbeautiful", "company": "(주) 벗뷰티풀", "role": "Android Engineer", "period": "2026.01 ~ 현재", "logo": "/assets/img/main/butbeautiful.png",
+      "slug": "butbeautiful",
+      "company": "(주) 벗뷰티풀",
+      "role": "Android Engineer",
+      "period": "2026.01 ~ 현재",
+      "logo": "/assets/img/main/butbeautiful.png",
       "summary": "소셜 모임 앱 truloop 의 Android 개발을 맡아 v2.0 핵심 플로우 리뉴얼과 클럽(커뮤니티) 도메인 구축을 주도하고, 같은 기능을 iOS 에도 함께 구현해 두 플랫폼에 동시 출시했습니다.",
       "highlights": [
         "클럽(커뮤니티) 도메인 신규 구축 → Android · iOS 동시 출시",
         "R8 · 리소스 축소 · Baseline Profile → APK **41.1MB → 38.0MB**, 최적화 비율 **82% → 91%**",
         "데이터 레이어 함수형 전환 → DataSource **36 → 0**, RepositoryImpl **25 → 2**",
         "ViewModel → Presenter 마이그레이션 → 레거시 ViewModel **52 → 0**"
-      ],
-      "note": "퇴사 사유 - 경영 방식 변화로 인한 구조조정"
+      ]
     },
     {
-      "slug": "threei", "company": "(주) 쓰리아이", "role": "Android Engineer", "period": "2024.11 ~ 2025.12", "logo": "/assets/img/main/threei.jpeg",
+      "slug": "threei",
+      "company": "(주) 쓰리아이",
+      "role": "Android Engineer",
+      "period": "2024.11 ~ 2025.12",
+      "logo": "/assets/img/main/threei.jpeg",
       "summary": "BLE 기반 모션 트래킹 앱과 연동되는 Android SDK 및 애플리케이션을 설계·개발하며, 안드로이드 리드로서 아키텍처와 개발 흐름을 총괄하는 역할을 수행했습니다.",
       "highlights": [
         "말 트래킹 모델 변환 → 메모리 소비량 약 **60% 감소**",
@@ -41,29 +105,39 @@
       ]
     },
     {
-      "slug": "ninthwonder", "company": "(주) 나인스원더", "role": "Android Engineer", "period": "2023.08 ~ 2024.08", "logo": "/assets/img/main/ninthwonder.jpeg",
+      "slug": "ninthwonder",
+      "company": "(주) 나인스원더",
+      "role": "Android Engineer",
+      "period": "2023.08 ~ 2024.08",
+      "logo": "/assets/img/main/ninthwonder.jpeg",
       "summary": "We웃 앱의 핵심 Android 개발자로서 아키텍처 개선(Hilt)과 UX 중심 기능 개발을 통해 서비스 안정성과 사용자 경험을 고도화하는 역할을 수행했습니다.",
       "highlights": [
         "지역 기반 스탬프 투어 출시 → MAU **15% 증가**, 앱 평점 **3.8 → 4.0**",
         "프로필 화면 개편(Compose 전환) → 사용자 진입률 **40% 향상**",
         "DI 전환(Koin → Hilt) → 앱 안정성 **91% → 98%** 개선",
         "주요 기능 UI/UX 개선으로 사용자 행동 증가 및 서비스 사용성 강화"
-      ],
-      "note": "퇴사 사유 - 경영 악화로 인한 구조조정"
+      ]
     },
     {
-      "slug": "greenlabs", "company": "그린랩스 파이낸셜", "role": "Android Engineer", "period": "2022.11 ~ 2023.04", "logo": "/assets/img/main/greenlabs.jpeg",
+      "slug": "greenlabs",
+      "company": "그린랩스 파이낸셜",
+      "role": "Android Engineer",
+      "period": "2022.11 ~ 2023.04",
+      "logo": "/assets/img/main/greenlabs.jpeg",
       "summary": "SEED 앱의 Android 플랫폼 품질을 강화하기 위해 디자인 시스템, 빌드 구조, 보안 모듈 등 전사적 개발 효율과 아키텍처를 개선하는 역할을 맡았습니다.",
       "highlights": [
         "빌드 스크립트 최적화 → 빌드 시간 **5분 → 1분대 (70% 감소)**",
         "Custom Plugin 개발 → Gradle 중복 코드 **60% 제거**",
         "Compose 기반 디자인 시스템 구축 및 MavenCentral 배포 → UI 일관성 확보",
         "금융 보안 기능 모듈화 → 특정 기능·도메인 단위의 독립 적용 가능"
-      ],
-      "note": "퇴사 사유 - 경영 악화로 인한 구조조정"
+      ]
     },
     {
-      "slug": "yeogi", "company": "(주) 여기어때컴퍼니", "role": "Android Engineer", "period": "2022.06 ~ 2022.09", "logo": "/assets/img/main/yeogi.png",
+      "slug": "yeogi",
+      "company": "(주) 여기어때컴퍼니",
+      "role": "Android Engineer",
+      "period": "2022.06 ~ 2022.09",
+      "logo": "/assets/img/main/yeogi.png",
       "summary": "공간대여 도메인에 특화된 Android 기능 개발 및 UI·정책 반영을 통해 서비스 흐름과 사용자 경험을 안정적으로 구현하는 역할을 담당했습니다.",
       "highlights": [
         "공간대여 홈 화면 구축 → 여기어때 UI 효율화 관여",
@@ -71,7 +145,11 @@
       ]
     },
     {
-      "slug": "meshkorea", "company": "(주) 메쉬코리아", "role": "Android Engineer", "period": "2021.04 ~ 2022.06", "logo": "/assets/img/main/meshkorea.png",
+      "slug": "meshkorea",
+      "company": "(주) 메쉬코리아",
+      "role": "Android Engineer",
+      "period": "2021.04 ~ 2022.06",
+      "logo": "/assets/img/main/meshkorea.png",
       "summary": "물류·배송 시스템의 모바일 기반을 구축하기 위해 기사·매니저·TMS 앱 개발과 전사 디자인 시스템(VDS)을 담당하며 대규모 서비스의 Android 구조를 정비했습니다.",
       "highlights": [
         "VDS(디자인 시스템) 구축 → 전사 UI 일관성 및 개발 속도 향상",
@@ -80,7 +158,11 @@
       ]
     },
     {
-      "slug": "sendbird", "company": "Sendbird Inc.", "role": "Android SDK Engineer, Messaging", "period": "2019.01 ~ 2021.04", "logo": "/assets/img/main/sendbird.png",
+      "slug": "sendbird",
+      "company": "Sendbird Inc.",
+      "role": "Android SDK Engineer, Messaging",
+      "period": "2019.01 ~ 2021.04",
+      "logo": "/assets/img/main/sendbird.png",
       "summary": "SendBird Chat SDK의 핵심 기능 설계·개발과 테스트 자동화를 통해 SDK 품질과 개발자 경험(DX)을 향상시키는 플랫폼 레벨의 Android 엔지니어 역할을 수행했습니다.",
       "highlights": [
         "테스트 구조 개선 → CircleCI 테스트 성공률 **5% 증가**",
@@ -90,7 +172,15 @@
     }
   ],
   "education": [
-    { "school": "수도전기공업고등학교", "major": "에너지정보통신과", "period": "2016.01 ~ 2019.02" }
+    {
+      "school": "수도전기공업고등학교",
+      "major": "에너지정보통신과",
+      "period": "2016.01 ~ 2019.02"
+    }
   ],
-  "certificates": ["정보처리기능사", "전기기능사", "통신선로기능사"]
+  "certificates": [
+    "정보처리기능사",
+    "전기기능사",
+    "통신선로기능사"
+  ]
 }
