@@ -68,7 +68,7 @@ BLE 기기와 연동된 모션트래킹 Android SDK 와 애플리케이션을 �
 
 #### Achievement
 
-- 카메라 사용 시 발열 약 **75% 이상 감소 ( Pixel 기준 )**, Pixel 기기 ANR 제거
+- 카메라 사용 시 발열 약 **75% 이상 감소 (Pixel 기준)**, Pixel 기기 ANR 제거
 
 #### Tech Used
 
